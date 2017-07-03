@@ -19,10 +19,10 @@ public class Main {
 		int[][] result = mb.fill();
 		magic=mb.testForMagic(result);
 		if(magic){
-			System.out.println("Your matrix is a Magic Square!!");
+			System.out.println("true");
 			}
 		else
-			System.out.println("Sorry, your matrix is not a Magic Square.");
+			System.out.println("false");
 		}
 }
 	
