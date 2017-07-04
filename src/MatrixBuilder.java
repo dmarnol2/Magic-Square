@@ -3,21 +3,22 @@ import java.util.Scanner;
 public class MatrixBuilder {
 	
 	int[][] squareMatrix;
+	int[] testArray;
 	int size, sum;
 	int comparator=0;
 	int check=0;         // conditional for while loop
 	
-	public MatrixBuilder(int[][] matrix, int size) {
-		this.squareMatrix=matrix;
+	public MatrixBuilder(int size) {
+		this.squareMatrix=new int[size][size];
 		this.size=size;
 	}
 	
-	 public int[][] fill(){
-		 Scanner input = new Scanner(System.in);
-		 System.out.println("Enter values for the Matrix one at a time: ");
+	 public int[][] fill(int[] array){
+		 //Scanner input = new Scanner(System.in);
+		// System.out.println("Enter values for the Matrix one at a time: ");
 		    for(int row=0;row<size;row++){
 		    	for(int col=0;col<size;col++){
-		    		squareMatrix[row][col]=input.nextInt();
+		    		squareMatrix[row][col]=array[col];
 		    		}
 		    	}
 		    return squareMatrix;
