@@ -26,9 +26,7 @@ public class Main {
 	 * Uses checkDuplicates method and MatrixBuilder class.
 	 *  
 	 * @param args Unused
-	 * @return Nothing
-	 * 
-	 * 
+	 *  
 	 */
 	public static void main(String[] args) {
 		

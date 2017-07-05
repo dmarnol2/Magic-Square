@@ -55,8 +55,7 @@ public class MatrixBuilder {
 	 * Method prints user's square matrix
 	 * 
 	 * @param matrix the 2D matrix created from user input
-	 * @return Nothing
-	 * 
+	 *  
 	 */
 	public void printMatrix(int[][] matrix){
 		 for(int row=0;row<size;row++){
