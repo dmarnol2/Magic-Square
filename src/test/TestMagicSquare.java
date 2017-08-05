@@ -22,7 +22,17 @@ import core.*;
 public class TestMagicSquare {
 	
 	static MagicSquare magic;
-	static MagicSquare testConstructor2;
+	
+	// to test constructor that takes array as param
+	static MagicSquare constructor2;
+	static MagicSquare constructor2a;
+	static MagicSquare constructor2b;
+	static MagicSquare constructor2c;
+	
+	public static final String[] magicArray={"8","1","6","3","5", "7", "4", "9", "2"};
+	public static final String[] failSize={"1","6","3","5","7"};
+	public static final String[] failDuplicates = {"3","5", "7", "4", "7", "2"};
+	public static final String[] failMagicTest = {"1","2","3","4","5", "6", "7", "8", "9"};
 	
 	/**
 	 * This method creates objects for each account type that is 
@@ -33,7 +43,11 @@ public class TestMagicSquare {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		magic = new MagicSquare();
-		testConstructor2 = new MagicSquare();
+		constructor2 = new MagicSquare(magicArray);
+		constructor2a = new MagicSquare(failSize);
+		constructor2b = new MagicSquare(failDuplicates);
+		constructor2c = new MagicSquare(failMagicTest);
+		
 	}
 	
 	/**
@@ -45,7 +59,10 @@ public class TestMagicSquare {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		magic=null;
-		testConstructor2=null;
+		constructor2=null;
+		constructor2a=null;
+		constructor2b=null;
+		constructor2c=null;
 	}
 
 	/**
@@ -55,9 +72,8 @@ public class TestMagicSquare {
 	 */
 	@Test
 	public void testSquareMatrix() {
-		String[] failSize = {"1","6","3","5","7"};
 		assertFalse(magic.squareMatrix(failSize));
-		assertFalse(testConstructor2.squareMatrix(failSize));
+		assertFalse(constructor2a.squareMatrix(constructor2a.getStrArray()));
 		}
 	
 	/**
@@ -67,9 +83,8 @@ public class TestMagicSquare {
 	 */
 	@Test
 	public void testCheckDuplicates(){
-		String[] failDuplicates = {"3","5", "7", "4", "7", "2"};
 		assertTrue(magic.checkDuplicates(failDuplicates));
-		assertTrue(testConstructor2.checkDuplicates(failDuplicates));
+		assertTrue(constructor2b.checkDuplicates(constructor2b.getStrArray()));
 		}
 	
 	/**
@@ -79,9 +94,8 @@ public class TestMagicSquare {
 	 */
 	@Test
 	public void testTestForMagic(){
-		String[] failMagicTest = {"1","2","3","4","5", "6", "7", "8", "9"};
 		assertFalse(magic.testForMagic(failMagicTest));
-		assertFalse(testConstructor2.testForMagic(failMagicTest));
+		assertFalse(constructor2c.testForMagic(constructor2c.getStrArray()));
 		}
 	
 	/**
@@ -92,13 +106,12 @@ public class TestMagicSquare {
 	 */
 	@Test
 	public void testApplication(){
-		String[] validMagicArray = {"8","1","6","3","5", "7", "4", "9", "2"};
-		assertTrue(magic.squareMatrix(validMagicArray));
-		assertFalse(magic.checkDuplicates(validMagicArray));
-		assertTrue(magic.testForMagic(validMagicArray));
-		assertTrue(testConstructor2.squareMatrix(validMagicArray));
-		assertFalse(testConstructor2.checkDuplicates(validMagicArray));
-		assertTrue(testConstructor2.testForMagic(validMagicArray));
+		assertTrue(magic.squareMatrix(magicArray));
+		assertFalse(magic.checkDuplicates(magicArray));
+		assertTrue(magic.testForMagic(magicArray));
+		assertTrue(constructor2.squareMatrix(constructor2.getStrArray()));
+		assertFalse(constructor2.checkDuplicates(constructor2.getStrArray()));
+		assertTrue(constructor2.testForMagic(constructor2.getStrArray()));
 		
 		}
  

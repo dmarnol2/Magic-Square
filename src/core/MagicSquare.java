@@ -51,6 +51,10 @@ public class MagicSquare {
 			}
 		}
 	
+	public String[] getStrArray(){
+		return strArray;
+	}
+	
 	/**
 	 * 	
 	 * @return int[]  intArray
@@ -117,7 +121,7 @@ public class MagicSquare {
 		else if(squareMatrix(array)){
 			MatrixBuilder mb = new MatrixBuilder(sqrt);
 			int[][] result = mb.fillMatrix(getIntArray());
-			isMagic=mb.testForMagic(result);
+			isMagic=mb.magicTest(result);
 			if(isMagic){
 				System.out.println("True, you created a Magic Square.");
 				return true;

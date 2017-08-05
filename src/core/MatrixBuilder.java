@@ -79,7 +79,7 @@ public class MatrixBuilder {
 	 * @param matrix the 2D matrix created from user input
 	 * @return boolean true if Magic Square, or false if not Magic Square
 	 */
-	public boolean testForMagic(int[][] matrix){
+	public boolean magicTest(int[][] matrix){
 		
 		//find value of 1st row and use to compare 
 		 for (int i = 0; i <size; i++){
