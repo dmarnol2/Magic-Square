@@ -29,8 +29,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		MagicSquare magic = new MagicSquare();
-		magic.getUserInput();
-
+	
 	}
 } // end class
 	

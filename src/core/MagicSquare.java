@@ -1,7 +1,6 @@
 package core;
 
 import java.util.HashSet;
-import java.util.Scanner;
 
 /**
  * This program determines if the numbers entered by
@@ -18,7 +17,6 @@ public class MagicSquare {
 	
 	private boolean isMagic;
 	private int sqrt;
-	private boolean check=true;
 	private int[] intArray;
 	String[] strArray;//=null;
 	
@@ -40,33 +38,7 @@ public class MagicSquare {
 		setIntArray(array);
 		}
 
-	/**
-	 * This method takes a string of numbers
-	 * from user and passes array to method that checks if it
-	 * forms a Magic Square where all rows, columns, and diagonals
-	 * add up to the same value.
-	 * 
-	 * Uses method testForMagic.
-	 * 
-	 */
-	public void getUserInput(){
-		
-		Scanner scan = new Scanner(System.in);	
-		do{
-			System.out.println("Type in a list of numbers, or N to quit, then press enter: ");
-			String input = scan.nextLine();
-			if (input.equalsIgnoreCase("N")){
-				System.out.println("Goodbye");
-				break;
-				}
-			else{
-				strArray = input.split("\\W");
-				check=testForMagic(strArray);
-				}	
-				} while (!check);
-		scan.close();
-		}
-		
+			
 	/**
 	 * Converts passed String array to an Integer array
 	 * 
